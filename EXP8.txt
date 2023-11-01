@@ -1,0 +1,45 @@
+		exp 8  maven pipeline
+
+
+
+1 git project - git url - hellowala
+2 trigeers - hooks and snapshort 
+3 pipeline script -syntax 
+
+pipeline {
+    agent any
+    tools {
+        maven 'MAVEN'
+    }
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'ad30eb04-2ce5-4f7f-8da8-3626b8d3a79e', url: 'https://github.com/rahul22112003/maven-jenkins.git']])
+               
+
+            }
+        }
+    }
+    post {
+        always {
+            junit(
+                allowEmptyResults:true,
+                testResults: '*test-reports/.xml'
+                )
+        }
+    }
+}
+
+4  pipeline sytax generation 
+5 steps - checkout
+6 git ka url dalo
+7 branch - main 
+
+generate pipeline script - ou to step 3 and replace the checkout wala line 
+
+done
+
+
+
+

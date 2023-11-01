@@ -1,0 +1,11 @@
+  		exp 7  MAVEN
+
+1 git project url
+2 source code management - git url
+3 branch - main
+4 triggers - snspshort
+		hooks
+5 build environment - delet worspace before build
+6 build - root POM - my-app/pom.xml
+	goals - clean package 
+7 post step - run egardless
